@@ -1,5 +1,6 @@
 """
-    Time:13:31
+    Version 2
+    Time:14:00
 """
 import PySimpleGUI as sg
 import random
