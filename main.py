@@ -1,17 +1,16 @@
 """
-    Version 2
-    Time:17:14
+    Version 3.1
+    DateTime:27/12/24 17:14
+    Desc: Variable timer
 """
 import PySimpleGUI as sg
 import random
 
 layout = [[sg.Text("Meditation Labels")],
-          [sg.Input("60, Mind, Body, Breath", key="inp_csvData")],
+          [sg.Input("5, Mind, Body, Breath", key="inp_csvData")],
           [sg.Text("", key="txt_Selected")],
-          [
-              sg.Button("Update", key="btn_Submit"),
-              sg.Button("Go", key="btn_Next")
-          ]]
+          [sg.Button("Start", key="btn_Start")]
+         ]
 
 
 def myFunction(inputStr: str):
@@ -26,15 +25,17 @@ window = sg.Window("My Meditation Gui", layout, size=(600, 700))
 while True:
     event, values = window.read(timeout=100)  # Read user interactions
 
-    if event == "btn_Next":
+    if event == "btn_Start":
         # Update the text field with new content
         sendStr: str = values["inp_csvData"]
         window["txt_Selected"].update(myFunction(sendStr))
-        window["btn_Next"].update(disabled=True)
+        window["btn_Start"].update(disabled=True)
 
-        for seconds in range(10, 0, -1):
+        
+        timerDelay = int(sendStr.split(",")[0])
+        for seconds in range(timerDelay, 0, -1):
             window.read(timeout=1000)
-        window["btn_Next"].update(disabled=False)
+        window["btn_Start"].update(disabled=False)
 
     if event == "btn_Submit":
         # Update the text field with new content
