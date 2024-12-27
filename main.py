@@ -1,13 +1,15 @@
 """
-    Version 3.1
+    Version 3.2
     DateTime:27/12/24 17:14
-    Desc: Variable timer
+    Desc: Include Beeper
 """
 import PySimpleGUI as sg
 import random
+import pygame
+
 
 layout = [[sg.Text("Meditation Labels")],
-          [sg.Input("5, Mind, Body, Breath", key="inp_csvData")],
+          [sg.Input("2, Mind, Body, Breath", key="inp_csvData")],
           [sg.Text("", key="txt_Selected")],
           [sg.Button("Start", key="btn_Start")]
          ]
@@ -36,6 +38,14 @@ while True:
         for seconds in range(timerDelay, 0, -1):
             window.read(timeout=1000)
         window["btn_Start"].update(disabled=False)
+
+        # Initialize the pygame mixer
+        pygame.mixer.init()
+        sound = pygame.mixer.Sound("339129__indigoray__beep-select.wav")
+        sound.play()
+        pygame.mixer.music.stop()
+        
+
 
     if event == "btn_Submit":
         # Update the text field with new content
