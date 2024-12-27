@@ -7,6 +7,7 @@ import PySimpleGUI as sg
 import random
 import pygame
 
+pygame.mixer.init()
 
 layout = [[sg.Text("Meditation Labels")],
           [sg.Input("2, Mind, Body, Breath", key="inp_csvData")],
@@ -22,6 +23,9 @@ def myFunction(inputStr: str):
 
 
 window = sg.Window("My Meditation Gui", layout, size=(600, 700))
+
+
+
 
 # Event loop: Keep the window open and responsive
 while True:
@@ -43,7 +47,7 @@ while True:
         window["btn_Start"].update(disabled=False)
 
         # Initialize the pygame mixer
-        pygame.mixer.init()
+
         sound = pygame.mixer.Sound("339129__indigoray__beep-select.wav")
         sound.play()
         pygame.time.wait(1000)  # Adjust based on sound duration
