@@ -43,8 +43,9 @@ while True:
         pygame.mixer.init()
         sound = pygame.mixer.Sound("339129__indigoray__beep-select.wav")
         sound.play()
-        pygame.mixer.music.stop()
-        
+        pygame.time.wait(1000)  # Adjust based on sound duration
+
+    
 
 
     if event == "btn_Submit":
