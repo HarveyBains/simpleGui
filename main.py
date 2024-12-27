@@ -28,6 +28,9 @@ while True:
     event, values = window.read(timeout=100)  # Read user interactions
 
     if event == "btn_Start":
+        # Apply new user content
+        window["inp_csvData"].update(values["inp_csvData"])
+        
         # Update the text field with new content
         sendStr: str = values["inp_csvData"]
         window["txt_Selected"].update(myFunction(sendStr))
@@ -48,9 +51,8 @@ while True:
     
 
 
-    if event == "btn_Submit":
-        # Update the text field with new content
-        window["inp_csvData"].update(values["inp_csvData"])
+
+        
 
     if event == sg.WINDOW_CLOSED or event == "OK":  # Close if "X" or "OK" clicked
         break
