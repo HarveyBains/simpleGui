@@ -10,7 +10,7 @@ import PySimpleGUI as sg
 pygame.mixer.init()
 
 layout = [[sg.Text("Meditation Labels")],
-          [sg.Input("2, Mind, Body, Breath", key="inp_csvData")],
+          [sg.Input("45, Mind, Body, Breath", key="inp_csvData")],
           [sg.Text("", key="txt_Selected")],
           [sg.Button("Start", key="btn_Start")]
          ]
