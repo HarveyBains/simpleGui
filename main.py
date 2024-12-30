@@ -44,6 +44,11 @@ while True:
             window.read(timeout=1000)
         window["btn_Start"].update(disabled=False)
 
+        # Play the sound effect
+        pygame.mixer.Sound("339129__indigoray__beep-select.wav").play()
+        pygame.time.wait(1000)  # Adjust based on sound duration
+
+
     if event == "tgl_Theme":
         # Change theme
         if theme == 'DarkBlue3':
@@ -53,9 +58,7 @@ while True:
         window.close()
         window = create_window(theme)
 
-        # Play the sound effect
-        pygame.mixer.Sound("339129__indigoray__beep-select.wav").play()
-        pygame.time.wait(1000)  # Adjust based on sound duration
+       
 
     if event == sg.WINDOW_CLOSED or event == "OK":  # Close if "X" or "OK" clicked
         break
