@@ -9,18 +9,20 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
-myParagraph1:str = "Your present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nYour present is where flesh meets with matter and spirit.\nTherefore your present is the point of power"
-myParagraph2:str = "Your xxx govern the actualisation of events.\nCreativity xx experience is being created by each and every individual.\nYourxxxx present is where flesh meets with matter and spirit.\nxx your present is the point of xxxx"
+myParagraph1:str = "Your present beliefs govern the actualisation of events. Creativity and experience is being created by each and every individual. Your present is where flesh meets with matter and spirit. Therefore your present is the point of power"
+myParagraph2:str = "xxx"
 
+# Create a pop which takes text input
 
 
 def create_window(theme):
     sg.theme(theme)
     layout = [
-        [sg.Text("Meditation Labels", font=("Helvetica", 14, "bold"))],
-        [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(50, 7), font=("Helvetica", 8, "bold"), background_color="light grey", text_color="black")],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 6, "bold"))],
-        [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme"), sg.Input("20,1", key="inp_ParaNo", size=5, justification="center",font=("Helvetica", 8, "bold"), background_color="light grey")]
+        [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 12)), sg.Input("30,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 12), background_color="light grey", text_color="black")],
+        [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 10), font=("Helvetica", 12), background_color="light grey", text_color="black", pad=(0, 20))],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 12), size=(60, 2), background_color="light grey", text_color="black", pad=(0, 20))],
+        [sg.Button("Go", key="btn_Start", size=(10, 2), font=("Helvetica", 12)),     
+            sg.Button("Theme Toggle", key="tgl_Theme", size=(12, 2), font=("Helvetica", 12))]
     ]
     return sg.Window("My Meditation Gui", layout, size=(1000, 600))
 
@@ -34,7 +36,7 @@ def update_txtPara(txtNo: str) -> str:
     match txtNo:
         case "1": return myParagraph1
         case "2": return myParagraph2
-        case _: return "Invalid paragraph number"
+        case "3": return values["inp_txtBlock"]
     
 
 
