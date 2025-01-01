@@ -19,7 +19,7 @@ def create_window(theme):
         [sg.Text("", key="txt_Selected", font=("Helvetica", 8, "bold"))],
         [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]
     ]
-    return sg.Window("My Meditation Gui", layout, size=(1200, 600))
+    return sg.Window("My Meditation Gui", layout, size=(1000, 600))
 
 def myFunction(inputStr: str):
     valuesList: list = inputStr.split(".")
