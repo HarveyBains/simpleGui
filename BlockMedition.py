@@ -9,13 +9,15 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
+myParagraph:str = "3.\nYour present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nYour present is where flesh meets with matter and spirit.\nTherefore your present is the point of power"
+
+
+
 def create_window(theme):
     sg.theme(theme)
     layout = [
         [sg.Text("Meditation Labels", font=("Helvetica", 14, "bold"))],
-        [sg.Multiline("5. Your present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nwhere flesh meets with matter and spirit.\nTherefore your present is the point of power",
-            key="inp_csvData", size=(50, 7), font=("Helvetica", 8, "bold"), background_color="light grey", text_color="black"
-            )],
+        [sg.Multiline(default_text=myParagraph, key="inp_csvData", size=(50, 7), font=("Helvetica", 8, "bold"), background_color="light grey", text_color="black")],
         [sg.Text("", key="txt_Selected", font=("Helvetica", 6, "bold"))],
         [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]
     ]
