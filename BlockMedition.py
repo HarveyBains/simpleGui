@@ -9,7 +9,8 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
-myParagraph:str = "3.\nYour present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nYour present is where flesh meets with matter and spirit.\nTherefore your present is the point of power"
+myParagraph1:str = "Your present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nYour present is where flesh meets with matter and spirit.\nTherefore your present is the point of power"
+myParagraph2:str = "Your clothes govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nYour present is where flesh meets with matter and spirit.\nTherefore your present is the point of power"
 
 
 
@@ -17,34 +18,48 @@ def create_window(theme):
     sg.theme(theme)
     layout = [
         [sg.Text("Meditation Labels", font=("Helvetica", 14, "bold"))],
-        [sg.Multiline(default_text=myParagraph, key="inp_csvData", size=(50, 7), font=("Helvetica", 8, "bold"), background_color="light grey", text_color="black")],
+        [sg.Multiline(default_text=myParagraph1, key="inp_csvData", size=(50, 7), font=("Helvetica", 8, "bold"), background_color="light grey", text_color="black")],
         [sg.Text("", key="txt_Selected", font=("Helvetica", 6, "bold"))],
-        [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]
+        [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme"), sg.Input("30, 1", key="inp_ParaNo", size=5, justification="center",font=("Helvetica", 8, "bold"), background_color="light grey")]
     ]
     return sg.Window("My Meditation Gui", layout, size=(1000, 600))
 
 def myFunction(inputStr: str):
     valuesList: list = inputStr.split(".")
-    randomSel: int = random.randint(1, len(valuesList) - 1)
+    randomSel: int = random.randint(0, len(valuesList) - 1)
     return (f"{valuesList[randomSel].strip()}")
+
+def update_txtPara() -> str:
+    txtNo:str= values["inp_ParaNo"].split(",")[1]
+    if txtNo == "2":
+        return myParagraph2
+    else:
+        return myParagraph1
+
+
 
 theme = "DarkBlue3"  # Default theme
 window = create_window(theme)
+
 
 # Event loop: Keep the window open and responsive
 while True:
     event, values = window.read(timeout=100)  # Read user interactions
 
     if event == "btn_Start":
-        # Apply new user content
-        window["inp_csvData"].update(values["inp_csvData"])
         
+        # update the textParaNo
+        window["inp_csvData"].update(update_txtPara(), values)
+
+      
         # Update the text field with new content
         sendStr: str = values["inp_csvData"]
         window["txt_Selected"].update(myFunction(sendStr))
         window["btn_Start"].update(disabled=True)
 
-        timerDelay = int(sendStr.split(".")[0])
+
+        # Run the delay timer
+        timerDelay = int(values["inp_ParaNo"].split(",")[0])
         for seconds in range(timerDelay, 0, -1):
             window.read(timeout=1000)
         window["btn_Start"].update(disabled=False)
