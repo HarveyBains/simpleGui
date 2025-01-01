@@ -15,7 +15,7 @@ def create_window(theme):
               [sg.Multiline("5. Hello. Bye", key="inp_csvData", size=(50, 10), background_color="light grey", text_color="black")],
               [sg.Text("", key="txt_Selected", font=("Helvetica", 12, "bold"))],
               [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]]  # Added toggle button at the bottom
-    return sg.Window("My Meditation Gui", layout, size=(600, 700))
+    return sg.Window("My Meditation Gui", layout, size=(600, 900))
 
 def myFunction(inputStr: str):
     valuesList: list = inputStr.split(".")
