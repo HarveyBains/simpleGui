@@ -9,7 +9,7 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
-myParagraph1:str = "Historical experiences contains memories of both joy and pain. The beliefs of the present will attract supportive past memories. Beliefs weave the future using a combination of the past and incoming sense data to actualise events. Creativity and experience is being created by all individuals. The present moment is where Spirit meets flesh and matter. Therefore the present is the seat of power. Being present in the moment is key, for seeing how current behaviors are being induced. Looking for new sense data that is contrary can help the breakout. Induce what the existing beliefs are. See how new positive beliefs can be included to lead into a new direction."
+myParagraph1:str = "The experiences from life can contain both memories of joy and difficulty. Beliefs in the present tend to attract similar supporting past memories. Beliefs tend to generate similar experiences by both  weaving the past with incoming sense data to actualise new experience. Experience and Creativity is being produced by all individuals. The present moment is where Spirit meets flesh and matter. Therefore the present is the seat and pinnacle of power. Being present in the moment is key, for seeing how current behaviours are being caused. Looking for contrary new sense data can bring about questioning, doubt and confusion. Flush out the grey presuppositions with yes-no statements. Additionally See how new more enhancing beliefs can be included to change to a new direction"
 myParagraph2:str = "xxx"
 
 # Create a pop which takes text input
