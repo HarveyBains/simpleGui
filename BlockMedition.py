@@ -11,10 +11,14 @@ pygame.mixer.init()
 
 def create_window(theme):
     sg.theme(theme)
-    layout = [[sg.Text("Meditation Labels", font=("Helvetica", 12, "bold"))],
-              [sg.Multiline("5. Hello. Bye", key="inp_csvData", size=(50, 10), background_color="light grey", text_color="black")],
-              [sg.Text("", key="txt_Selected", font=("Helvetica", 12, "bold"))],
-              [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]]  # Added toggle button at the bottom
+    layout = [
+        [sg.Text("Meditation Labels", font=("Helvetica", 12, "bold"))],
+        [sg.Multiline("5.\nYour present beliefs govern the actualisation of events.\nCreativity and experience is being created by each and every individual.\nwhere flesh meets with matter and spirit.\nTherefore your present is the point of power",
+            key="inp_csvData", size=(50, 10), background_color="light grey", text_color="black"
+            )],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 12, "bold"))],
+        [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]
+    ]
     return sg.Window("My Meditation Gui", layout, size=(600, 900))
 
 def myFunction(inputStr: str):
