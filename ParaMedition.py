@@ -20,7 +20,7 @@ def create_window(theme):
     layout = [
         [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("30,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
         [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 20))],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(60, 2), background_color="light grey", text_color="black", pad=(0, 20))],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(55, 1), background_color="light grey", text_color="black", pad=(0, 20))],
         [sg.Button("Go", key="btn_Start", size=(10, 2), font=("Helvetica", 12)),     
             sg.Button("Theme Toggle", key="tgl_Theme", size=(12, 2), font=("Helvetica", 12))]
     ]
