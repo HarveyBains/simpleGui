@@ -19,11 +19,11 @@ def create_window(theme):
     sg.theme(theme)
     layout = [
         [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("30,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
-        [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 7))],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(59, 1), background_color="light grey", text_color=("black"), pad=(0, 7) )],
+        [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 10))],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(59, 1), background_color="light grey", text_color=("black"), pad=(0, 10) )],
         [sg.Button("Go", key="btn_Start", size=(13, 1), font=("Helvetica", 14) ),sg.Button("Theme Toggle", key="tgl_Theme", size=(14, 1), font=("Helvetica", 13))]
     ]
-    return sg.Window("My Meditation Gui", layout, size=(1000, 500))
+    return sg.Window("My Meditation Gui", layout, size=(1000, 450))
 
 def myFunction(inputStr: str):
     valuesList: list = inputStr.split(".")
