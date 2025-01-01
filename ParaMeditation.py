@@ -9,7 +9,7 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
-myParagraph1:str = "Historical experiences contains memories of both joy and pain. The beliefs of the present will attract supportive past memories. Beliefs weave the future using a combination of the past and incoming sense data to actualise events. Creativity and experience is being created by all individuals. The present moment is where Spirit meets flesh and matter. Therefore the present is the seat of power. Being present in the moment is paramount, to seeing how behaviors are being induced. Seeing what sense data contrary can help us to breakout to higher pathways."
+myParagraph1:str = "Historical experiences contains memories of both joy and pain. The beliefs of the present will attract supportive past memories. Beliefs weave the future using a combination of the past and incoming sense data to actualise events. Creativity and experience is being created by all individuals. The present moment is where Spirit meets flesh and matter. Therefore the present is the seat of power. Being present in the moment is key, for seeing how current behaviors are being induced. Looking for new sense data that is contrary can help the breakout. Induce what the existing beliefs are. See how new positive beliefs can be included to lead into a new direction."
 myParagraph2:str = "xxx"
 
 # Create a pop which takes text input
@@ -18,7 +18,7 @@ myParagraph2:str = "xxx"
 def create_window(theme):
     sg.theme(theme)
     layout = [
-        [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("30,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
+        [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("20,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
         [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 10))],
         [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(59, 1), background_color="light grey", text_color=("black"), pad=(0, 10) )],
         [sg.Button("Go", key="btn_Start", size=(13, 1), font=("Helvetica", 14) ),sg.Button("Theme Toggle", key="tgl_Theme", size=(14, 1), font=("Helvetica", 13))]
