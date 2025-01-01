@@ -11,9 +11,9 @@ pygame.mixer.init()
 
 def create_window(theme):
     sg.theme(theme)
-    layout = [[sg.Text("Meditation Labels")],
+    layout = [[sg.Text("Meditation Labels", font=("Helvetica", 12, "bold"))],
               [sg.Input("45, Mind, Body, Breath", key="inp_csvData")],
-              [sg.Text("", key="txt_Selected")],
+              [sg.Text("", key="txt_Selected", font=("Helvetica", 12, "bold"))],
               [sg.Button("Start", key="btn_Start", size=(4, 2)), sg.Button("Theme Toggle", key="tgl_Theme")]]  # Added toggle button at the bottom
     return sg.Window("My Meditation Gui", layout, size=(600, 700))
 
