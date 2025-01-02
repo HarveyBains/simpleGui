@@ -19,8 +19,8 @@ def create_window(theme):
     layout = [
         [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("27,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
         [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 5), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 10))],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(50,2), background_color="light grey", text_color=("black"), pad=(0, 10) )]
-        
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(50,2), `background_color="light grey", text_color=("black"), pad=(0, 10) )],
+        [sg.Button("Go", key="btn_Start", size=(13, 1), font=("Helvetica", 12))]
     ]
     return sg.Window("My Meditation Gui", layout, size=(1000, 500))
 
@@ -67,6 +67,17 @@ while True:
         # Play the sound effect
         pygame.mixer.Sound("339129__indigoray__beep-select.wav").play()
         pygame.time.wait(1000)  # Adjust based on sound duration
+
+
+    if event == "tgl_Theme":
+        # Change theme
+        if theme == 'DarkBlue3': theme = 'DarkBlue'
+        else: theme = 'DarkBlue3'
+        
+        window.close()
+        window = create_window(theme)
+
+       
 
     if event == sg.WINDOW_CLOSED or event == "OK":  # Close if "X" or "OK" clicked
         break
