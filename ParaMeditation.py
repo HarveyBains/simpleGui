@@ -9,7 +9,7 @@ import PySimpleGUI as sg
 
 pygame.mixer.init()
 
-myParagraph1:str = "The experiences from life can contain both memories of joy and difficulty. Beliefs in the present tend to attract similar supporting past memories. Beliefs tend to generate similar experiences by both  weaving the past with incoming sense data to actualise new experience. Experience and Creativity is being produced by all individuals. The present moment is where Spirit meets flesh and matter. Therefore the present is the seat and pinnacle of power. Being present in the moment is key, for seeing how current behaviours are being caused. Looking for contrary new sense data can bring about questioning, doubt and confusion. Flush out the grey presuppositions with yes-no statements. Additionally See how new more enhancing beliefs can be included to change to a new direction"
+myParagraph1:str = "Experiences from life can contain both memories of joy and difficulty. Beliefs in the present tend to attract more-of-the-same experiences that are supportive from the past. Belief determines new experience by combining the present with the past to actualise new experience. Experience and mental creativity in varying levels is being produced by each and every individual. In the present moment is where Spirit choses a probabilistic outcome that coordinates flesh and matter. Therefore the present is the frontline, the seat and point of power, for wielding determinance and mental creativity to actualise new reality. So try to get the feeling of this present minded moment-by-moment quality. By becoming present is key for seeing first-hand how auto behaviours in the moment can influence experience if not quality checked. By seeking new sense data that is contrary - we can bring about a reappraisal process. Flush out the old presuppositions with yes-no statements. Use creativity in the thinking mind to yield more attractive beliefs that can cause a change of direction. So try to get the feeling of this present minded moment-by-moment quality"
 myParagraph2:str = "xxx"
 
 # Create a pop which takes text input
@@ -20,7 +20,7 @@ def create_window(theme):
     layout = [
         [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("20,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
         [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 10))],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(59, 1), background_color="light grey", text_color=("black"), pad=(0, 10) )],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(55,2), background_color="light grey", text_color=("black"), pad=(0, 10) )],
         [sg.Button("Go", key="btn_Start", size=(13, 1), font=("Helvetica", 14) ),sg.Button("Theme Toggle", key="tgl_Theme", size=(14, 1), font=("Helvetica", 13))]
     ]
     return sg.Window("My Meditation Gui", layout, size=(1000, 500))
