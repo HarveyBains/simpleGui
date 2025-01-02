@@ -20,7 +20,7 @@ def create_window(theme):
     layout = [
         [sg.Text("Enter Time (s), Paragraph No:", font=("Helvetica", 10)), sg.Input("20,1", key="inp_ParaNo", size=(10, 1), justification="center", font=("Helvetica", 10), background_color="light grey", text_color="black")],
         [sg.Multiline(default_text=myParagraph1, key="inp_txtBlock", size=(60, 6), font=("Helvetica", 8), background_color="light grey", text_color="black", pad=(0, 10))],
-        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(55,2), background_color="light grey", text_color=("black"), pad=(0, 10) )],
+        [sg.Text("", key="txt_Selected", font=("Helvetica", 8), size=(50,2), background_color="light grey", text_color=("black"), pad=(0, 10) )],
         [sg.Button("Go", key="btn_Start", size=(13, 1), font=("Helvetica", 14) ),sg.Button("Theme Toggle", key="tgl_Theme", size=(14, 1), font=("Helvetica", 13))]
     ]
     return sg.Window("My Meditation Gui", layout, size=(1000, 500))
